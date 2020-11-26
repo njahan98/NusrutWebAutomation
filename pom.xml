@@ -6,7 +6,12 @@
 
     <groupId>com.peoplentech</groupId>
     <artifactId>nusrutwebautomation</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>generic</module>
+        <module>walmart</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -70,7 +75,7 @@
                 <version>2.6</version>
             </dependency>
 
-            <!--Excel Reader-->
+            <!--Excel Reader for Java-->
             <dependency>
                 <groupId>org.apache.poi</groupId>
                 <artifactId>poi</artifactId>
