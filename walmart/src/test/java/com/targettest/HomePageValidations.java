@@ -1,4 +1,4 @@
-package com.walmarttest;
+package com.targettest;
 
 import com.base.TestBase;
 import com.walmart.HomePage;
@@ -9,6 +9,7 @@ public class HomePageValidations extends TestBase {
     @Test
     public void validateUserTypingOnSearchBar(){
         HomePage homePage = PageFactory.initElements(driver,HomePage.class);
+        homePage.clickOnSearchBar();
         homePage.typeOnSearchBar();
 
     }

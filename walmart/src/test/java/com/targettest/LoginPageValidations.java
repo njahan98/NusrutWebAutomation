@@ -1,4 +1,4 @@
-package com.walmarttest;
+package com.targettest;
 
 public class LoginPageValidations {
 }

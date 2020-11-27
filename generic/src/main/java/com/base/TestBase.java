@@ -13,10 +13,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.ITestContext;
-import org.testng.ITestResult;
 import org.testng.annotations.*;
-
 import java.io.File;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -37,23 +34,11 @@ public class TestBase {
     public static String sauceKey = "";
     public static String browserStackUserName = "";
     public static String browserStackKey = "";
-    //http:// + username + : + key + specific url for cloud
     public static String SAUCE_URL = "http://" + sauceUserName + ":" + sauceKey + "@ondemand.saucelabs.com:80/wd/hub";
     public static String BROWERSTACK_URL = "https://" + browserStackUserName + ":" + browserStackKey + "@hub-cloud.browserstack.com/wd/hub";
     private static Logger LOGGER = Logger.getLogger(TestBase.class);
     private BaseTestRunner ExtentTestManager;
 
-    /**
-     * @param platform       -
-     * @param url            -
-     * @param browser        -
-     * @param cloud          -
-     * @param browserVersion -
-     * @param envName        -
-     * @return
-     * @throws MalformedURLException
-     * @Parameters - values are coming from the runner.xml file of the project modules
-     */
     @Parameters({"platform", "url", "browser", "cloud", "browserVersion", "envName"})
     @BeforeMethod
     public static WebDriver setupDriver(String platform, String url, String browser,
@@ -67,13 +52,6 @@ public class TestBase {
         return driver;
     }
 
-    /**
-     * This method will create WebDriver Objet based on the browser and platform provided
-     *
-     * @param browser  the browser you want to execute your test case
-     * @param platform in the operating system you want to execute your test case
-     * @return WebDriver Object
-     */
     public static WebDriver getLocalDriver(String browser, String platform) {
         if (platform.equalsIgnoreCase("mac") && browser.equalsIgnoreCase("chrome")) {
             System.setProperty("webdriver.chrome.driver", "../generic/src/main/resources/chromedriver");
@@ -111,21 +89,11 @@ public class TestBase {
         return driver;
     }
 
-    /**
-     * this method will navigate the browser to provided URL
-     *
-     * @param url
-     */
     public static void navigateToURL(String url) {
         driver.get(url);
         LOGGER.info("navigated to the url : " + url);
     }
 
-    /**
-     * This method will wait for X seconds based on the param provided
-     *
-     * @param seconds
-     */
     public static void sleepFor(int seconds) {
         try {
             Thread.sleep(seconds * 1000);
@@ -134,18 +102,11 @@ public class TestBase {
         }
     }
 
-    /**
-     * This method will close the instance of the WebDriver
-     */
     public static void closeDriver() {
         driver.quit();
         LOGGER.info("closed the instance of the driver");
     }
 
-
-    /**
-     * This method will navigate back from the current page to previous page
-     */
     public static void navigateBack() {
         driver.navigate().back();
     }
@@ -154,8 +115,6 @@ public class TestBase {
         driver.findElement(By.xpath(element)).click();
     }
 
-
-    //screenshot
     public static void captureScreenshot(WebDriver driver, String screenshotName) {
         DateFormat df = new SimpleDateFormat("HH_mm_ss");
         Date date = new Date();
