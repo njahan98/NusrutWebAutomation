@@ -1,27 +1,32 @@
 package com.walmart;
 
 import com.base.TestBase;
-import org.openqa.selenium.By;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.Test;
+import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends TestBase {
-
+    private static Logger LOGGER = Logger.getLogger(HomePage.class);
+    @FindBy(id = "global-search-input")
     private WebElement searchBar;
+    @FindBy(id = "global-search-submit")
+    private WebElement searchButton;
+    @FindBy(linkText = "Walmart.com")
+    private WebElement homePageButton;
+    @FindBy(linkText = "Add to cart")
+    private WebElement addToCart;
 
-    @Test
-    public void clickOnSearchBar(){
-        navigateToURL("https://www.target.com");
-        sleepFor(2);
-        clickOnElement("(//input[@id='search'])"); ////input[@id='search']
-        sleepFor(2);
+
+    public void typeOnSearchBar() {
+        searchBar.sendKeys("Makeup");
+        searchButton.click();
     }
-    @Test
-    public void typeOnSearchBar(){
-        driver.findElement(By.id("search")).sendKeys("Makeup");
+    public void searchForItem() {
+        searchBar.sendKeys("Makeup");
+        searchButton.click();
         sleepFor(5);
-        clickOnElement("(//input[@id='search'])");
-
+        closeDriver();
     }
+
 
 }

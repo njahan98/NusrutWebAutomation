@@ -14,10 +14,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.*;
+
 import java.io.File;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.DateFormat;
@@ -30,14 +30,13 @@ public class TestBase {
 
     public static WebDriver driver;
     public static ExtentReports extent;
-    public static String sauceUserName = "";
-    public static String sauceKey = "";
-    public static String browserStackUserName = "";
-    public static String browserStackKey = "";
+    public static String sauceUserName = "nusrutjahan1";
+    public static String sauceKey = "ff3b5dce-9b66-4333-b00b-ca98460d9b85";
+    public static String browserStackUserName = "nusrutjahan1";
+    public static String browserStackKey = "gcLzGtJzfLXa6GCjqf41";
     public static String SAUCE_URL = "http://" + sauceUserName + ":" + sauceKey + "@ondemand.saucelabs.com:80/wd/hub";
-    public static String BROWERSTACK_URL = "https://" + browserStackUserName + ":" + browserStackKey + "@hub-cloud.browserstack.com/wd/hub";
+    public static String BROWSERSTACK_URL = "https://" + browserStackUserName + ":" + browserStackKey + "@hub-cloud.browserstack.com/wd/hub";
     private static Logger LOGGER = Logger.getLogger(TestBase.class);
-    private BaseTestRunner ExtentTestManager;
 
     @Parameters({"platform", "url", "browser", "cloud", "browserVersion", "envName"})
     @BeforeMethod
@@ -75,17 +74,18 @@ public class TestBase {
     public static WebDriver getCloudDriver(String browser, String browserVersion, String platform,
                                            String envName) throws MalformedURLException {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-        desiredCapabilities.setCapability("os_version", "Catalina");
-        desiredCapabilities.setCapability("resolution", "1920x1080");
+        desiredCapabilities.setCapability("name", "Cloud Execution");
         desiredCapabilities.setCapability("browser", browser);
         desiredCapabilities.setCapability("browser_version", browserVersion);
         desiredCapabilities.setCapability("os", platform);
-        desiredCapabilities.setCapability("name", "Sample Test");
+        desiredCapabilities.setCapability("os_version", "Mojave");
+        desiredCapabilities.setCapability("resolution", "1600x1200");
         if (envName.equalsIgnoreCase("saucelabs")) {
             driver = new RemoteWebDriver(new URL(SAUCE_URL), desiredCapabilities);
         } else if (envName.equalsIgnoreCase("browserstack")) {
-            driver = new RemoteWebDriver(new URL(BROWERSTACK_URL), desiredCapabilities);
+            driver = new RemoteWebDriver(new URL(BROWSERSTACK_URL), desiredCapabilities);
         }
+
         return driver;
     }
 
@@ -106,8 +106,9 @@ public class TestBase {
         driver.quit();
         LOGGER.info("closed the instance of the driver");
     }
-
+    
     public static void navigateBack() {
+
         driver.navigate().back();
     }
 
@@ -116,7 +117,7 @@ public class TestBase {
     }
 
     public static void captureScreenshot(WebDriver driver, String screenshotName) {
-        DateFormat df = new SimpleDateFormat("HH_mm_ss");
+        DateFormat df = new SimpleDateFormat("HH_mm_SS");
         Date date = new Date();
         df.format(date);
         File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
@@ -141,18 +142,10 @@ public class TestBase {
         return calendar.getTime();
     }
 
-    @AfterSuite
-    public void generateReport() {
-        extent.close();
-    }
-    //reporting finish
-
-
     @AfterMethod
     public void cleanUp() {
         driver.close();
         driver.quit();
-        LOGGER.info("driver closed");
     }
 
 }

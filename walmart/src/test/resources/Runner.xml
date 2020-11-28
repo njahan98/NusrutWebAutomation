@@ -3,16 +3,17 @@
 
 <suite name="Selenium Test Suite" parallel="false">
 
+    <parameter name="browser" value="chrome"/>
+    <parameter name="url" value="https://www.walmart.com"/>
+    <parameter name="platform" value="mac"/>
+
     <parameter name="cloud" value="false"/>
     <parameter name="envName" value="browserstack"/>
-    <parameter name="browser" value="chrome"/>
-    <parameter name="browserVersion" value="85.0"/>
-    <parameter name="url" value="https://www.target.com"/>
-    <parameter name="platform" value="mac"/>
+    <parameter name="browserVersion" value="latest"/>
 
     <test name="Automation tests">
         <classes>
-            <class name="com.targettest.HomePageValidations"/>
+            <class name="com.walmarttest.HomePageValidations"/>
         </classes>
     </test>
 </suite>
