@@ -41,6 +41,8 @@ public class LoginPage extends TestBase {
     @Test
     public void userPressingCreateAccount(){
         createAnAccount.click();
+        sleepFor(2);
+        closeDriver();
     }
 
 }

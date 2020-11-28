@@ -16,5 +16,14 @@ public class HomePageValidations extends TestBase {
         HomePage homePage = PageFactory.initElements(driver,HomePage.class);
         homePage.searchForItem();
     }
-
+    @Test
+    public void validateUserOpeningBeautySideBar(){
+        HomePage homePage = PageFactory.initElements(driver,HomePage.class);
+        homePage.openBeautySideBar();
+    }
+    @Test(enabled = false)
+    public void validateUserClickingEyeMakeupButton(){
+        HomePage homePage = PageFactory.initElements(driver,HomePage.class);
+        homePage.clickEyeMakeup();
+    }
 }
