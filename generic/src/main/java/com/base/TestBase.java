@@ -1,8 +1,6 @@
 package com.base;
 
 import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.LogStatus;
-import junit.runner.BaseTestRunner;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -13,7 +11,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 
 import java.io.File;
 import java.io.PrintWriter;
@@ -106,7 +106,7 @@ public class TestBase {
         driver.quit();
         LOGGER.info("closed the instance of the driver");
     }
-    
+
     public static void navigateBack() {
 
         driver.navigate().back();

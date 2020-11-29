@@ -6,7 +6,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class HomePage extends TestBase {
+public class HomePage {
     private static Logger LOGGER = Logger.getLogger(HomePage.class);
     @FindBy(id = "global-search-input")
     private WebElement searchBar;
@@ -26,22 +26,23 @@ public class HomePage extends TestBase {
         searchBar.sendKeys("Makeup");
         searchButton.click();
     }
+
     public void searchForItem() {
         typeOnSearchBar();
-        searchBar.sendKeys("Makeup");
         searchButton.click();
-        sleepFor(5);
     }
-    public void openBeautySideBar(){
+
+    public void openBeautySideBar() {
         searchForItem();
-        JavascriptExecutor js = (JavascriptExecutor) driver;
+        JavascriptExecutor js = (JavascriptExecutor) TestBase.driver;
         js.executeScript("arguments[0].scrollintoView(true);", beautySideBar);
         beautySideBar.click();
     }
-    public void clickEyeMakeup(){
+
+    public void clickEyeMakeup() {
         openBeautySideBar();
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollintoView(true);",eyeMakeupButton);
+        JavascriptExecutor js = (JavascriptExecutor) TestBase.driver;
+        js.executeScript("arguments[0].scrollintoView(true);", eyeMakeupButton);
         eyeMakeupButton.click();
     }
 

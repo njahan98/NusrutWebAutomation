@@ -1,14 +1,15 @@
 <html>
 <head>
-<title>TestNG:  Automation tests</title>
-<link href="../testng.css" rel="stylesheet" type="text/css" />
-<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+    <title>TestNG: Automation tests</title>
+    <link href="../testng.css" rel="stylesheet" type="text/css"/>
+    <link href="../my-testng.css" rel="stylesheet" type="text/css"/>
 
-<style type="text/css">
+    <style type="text/css">
 .log { display: none;} 
 .stack-trace { display: none;} 
-</style>
-<script type="text/javascript">
+
+    </style>
+    <script type="text/javascript">
 <!--
 function flip(e) {
   current = e.style.display;
@@ -49,34 +50,53 @@ function toggleAllBoxes() {
 }
 
 // -->
-</script>
+
+    </script>
 
 </head>
 <body>
-<h2 align='center'>Automation tests</h2><table border='1' align="center">
-<tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
-</tr><tr>
-<td>Started on:</td><td>Fri Nov 27 11:08:21 EST 2020</td>
-</tr>
-<tr><td>Total time:</td><td>12 seconds (12767 ms)</td>
-</tr><tr>
-<td>Included groups:</td><td></td>
-</tr><tr>
-<td>Excluded groups:</td><td></td>
-</tr>
-</table><p/>
-<small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='com.walmarttest.HomePageValidations.cleanUp()'><b>cleanUp</b><br>Test class: com.walmarttest.HomePageValidations</td>
-<td><div><pre>org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+<h2 align='center'>Automation tests</h2>
+<table align="center" border='1'>
+    <tr>
+        <td>Tests passed/Failed/Skipped:</td>
+        <td>1/0/0</td>
+    </tr>
+    <tr>
+        <td>Started on:</td>
+        <td>Fri Nov 27 11:08:21 EST 2020</td>
+    </tr>
+    <tr>
+        <td>Total time:</td>
+        <td>12 seconds (12767 ms)</td>
+    </tr>
+    <tr>
+        <td>Included groups:</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Excluded groups:</td>
+        <td></td>
+    </tr>
+</table>
+<p/>
+<small><i>(Hover the method name to see the test class name)</i></small>
+<p/>
+<table border='1' class='invocation-failed' width='100%'>
+    <tr>
+        <td align='center' colspan='4'><b>FAILED CONFIGURATIONS</b></td>
+    </tr>
+    <tr>
+        <td><b>Test method</b></td>
+        <td width="30%"><b>Exception</b></td>
+        <td width="10%"><b>Time (seconds)</b></td>
+        <td><b>Instance</b></td>
+    </tr>
+    <tr>
+        <td title='com.walmarttest.HomePageValidations.cleanUp()'><b>cleanUp</b><br>Test class:
+            com.walmarttest.HomePageValidations
+        </td>
+        <td>
+            <div><pre>org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;Nusruts-MBP.fios-router.home&apos;, ip: &apos;fe80:0:0:0:1805:8d6b:c02c:a419%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.15.7&apos;, java.version: &apos;13.0.2&apos;
 Driver info: driver.version: RemoteWebDriver
@@ -87,8 +107,12 @@ Driver info: driver.version: RemoteWebDriver
 	at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:442)
 	at com.base.TestBase.cleanUp(TestBase.java:153)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1507)
-... Removed 36 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1457551880", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1457551880'><pre>org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+... Removed 36 stack frames</pre>
+            </div>
+            <a href='#'
+               onClick='toggleBox("stack-trace1457551880", this, "Click to show all stack frames", "Click to hide stack frames")'>Click
+                to show all stack frames</a>
+            <div class='stack-trace' id='stack-trace1457551880'><pre>org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;Nusruts-MBP.fios-router.home&apos;, ip: &apos;fe80:0:0:0:1805:8d6b:c02c:a419%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.15.7&apos;, java.version: &apos;13.0.2&apos;
 Driver info: driver.version: RemoteWebDriver
@@ -135,22 +159,33 @@ Driver info: driver.version: RemoteWebDriver
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
-</pre></div></td>
-<td>0</td>
-<td>com.walmarttest.HomePageValidations@3ba987b8</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='com.walmarttest.HomePageValidations.validateUserTypingOnSearchBar()'><b>validateUserTypingOnSearchBar</b><br>Test class: com.walmarttest.HomePageValidations</td>
-<td></td>
-<td>6</td>
-<td>com.walmarttest.HomePageValidations@3ba987b8</td></tr>
-</table><p>
+</pre>
+            </div>
+        </td>
+        <td>0</td>
+        <td>com.walmarttest.HomePageValidations@3ba987b8</td>
+    </tr>
+</table>
+<p>
+<table border='1' class='invocation-passed' width='100%'>
+    <tr>
+        <td align='center' colspan='4'><b>PASSED TESTS</b></td>
+    </tr>
+    <tr>
+        <td><b>Test method</b></td>
+        <td width="30%"><b>Exception</b></td>
+        <td width="10%"><b>Time (seconds)</b></td>
+        <td><b>Instance</b></td>
+    </tr>
+    <tr>
+        <td title='com.walmarttest.HomePageValidations.validateUserTypingOnSearchBar()'>
+            <b>validateUserTypingOnSearchBar</b><br>Test class: com.walmarttest.HomePageValidations
+        </td>
+        <td></td>
+        <td>6</td>
+        <td>com.walmarttest.HomePageValidations@3ba987b8</td>
+    </tr>
+</table>
+<p>
 </body>
 </html>

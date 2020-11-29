@@ -7,25 +7,25 @@ import org.testng.annotations.Test;
 
 public class LoginPageValidations extends TestBase {
 
-    @Test
+    @Test(groups = "regression")
     public void validateUserClickingAccountButton() {
         LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
         loginPage.userClickingAccountButton();
     }
 
-    @Test(enabled = false)
+    @Test(groups = "smoke")
     public void validateUserClickingSignInButton() {
         LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
         loginPage.userClickingSignInButton();
     }
 
-    @Test(enabled = false)
+    @Test(groups = "regression")
     public void validateUserHittingAccountButton() {
         LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
         loginPage.userHittingAccountButton();
     }
 
-    @Test(enabled = false)
+    @Test(groups = "smoke")
     public void validateUserPressingCreateAccount() {
         LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
         loginPage.userPressingCreateAccount();

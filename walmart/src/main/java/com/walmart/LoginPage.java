@@ -27,19 +27,22 @@ public class LoginPage extends TestBase {
 
 
     @Test
-    public void userClickingAccountButton(){
+    public void userClickingAccountButton() {
         mainAccountButton.click();
     }
+
     @Test
-    public void userClickingSignInButton(){
+    public void userClickingSignInButton() {
         signInButton.click();
     }
+
     @Test
-    public void userHittingAccountButton(){
+    public void userHittingAccountButton() {
         accountButton.click();
     }
+
     @Test
-    public void userPressingCreateAccount(){
+    public void userPressingCreateAccount() {
         createAnAccount.click();
         sleepFor(2);
         closeDriver();
